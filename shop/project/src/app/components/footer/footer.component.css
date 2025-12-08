@@ -1,0 +1,76 @@
+:host.dark-theme .footer {
+  background-color: var(--footer-background-dark);
+  border-top-color: #555;
+  color: var(--text-color-dark);
+}
+
+:host.dark-theme .footer a {
+  color: var(--accent-color);
+}
+
+:host.dark-theme .footer a:hover {
+  color: var(--primary-color);
+}
+
+.footer {
+  background-color: var(--footer-background-light);
+  padding: 2rem 0;
+  border-top: 1px solid #dee2e6;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-color-light);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  margin-top: auto;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  transition: color 0.3s;
+}
+
+.footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 1.5rem 0;
+    font-size: 0.8rem;
+  }
+
+  .footer p {
+    margin: 0.25rem 0;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  .footer {
+    padding: 1.75rem 0;
+    font-size: 0.85rem;
+  }
+
+  .footer p {
+    margin: 0.375rem 0;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+  .footer {
+    padding: 1.875rem 0;
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .footer {
+    padding: 2rem 0;
+    font-size: 0.9rem;
+  }
+}
+

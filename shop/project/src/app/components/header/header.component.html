@@ -1,0 +1,32 @@
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="/">Shopping Center</a>
+    </div>
+    <button class="mobile-toggle" (click)="toggleMenu()" aria-label="Abrir menú">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <nav class="navigation" [class.open]="menuOpen()">
+      <ul>
+        <li><a routerLink="/">Inicio</a></li>
+        <li><a routerLink="/shop">Tienda</a></li>
+        <li><a routerLink="/contact">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+        <a routerLink="/cart" class="cart-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            @if (cartCount() > 0) {
+              <span class="cart-badge">{{ cartCount() }}</span>
+            }
+        </a>
+        <div class="theme-switcher">
+            <button (click)="toggleTheme()" aria-label="Cambiar tema">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              <span class="theme-text">Cambiar Tema</span>
+            </button>
+        </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,253 @@
+:host.dark-theme .header {
+  background-color: var(--header-background-dark);
+  border-bottom-color: #555;
+}
+
+:host.dark-theme .navigation a {
+  color: var(--text-color-dark);
+}
+
+:host.dark-theme .cart-icon svg {
+  fill: var(--text-color-dark);
+}
+
+:host.dark-theme .theme-switcher button {
+  background-color: var(--secondary-color);
+}
+
+.header {
+  background-color: var(--header-background-light);
+  padding: 1rem 0;
+  border-bottom: 1px solid #dee2e6;
+  transition: background-color 0.3s, border-color 0.3s;
+  position: relative; /* ensure absolutely positioned nav is anchored here */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logo a:hover {
+  color: var(--secondary-color);
+}
+
+.navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navigation li {
+  white-space: nowrap;
+}
+
+.navigation a {
+  font-size: 1rem;
+  color: var(--text-color-light);
+  text-decoration: none;
+  transition: color 0.3s;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.navigation a:hover {
+  color: var(--primary-color);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color-light);
+  transition: color 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  width: 32px;
+  height: 32px;
+}
+
+.cart-icon svg {
+  fill: var(--text-color-light);
+  transition: fill 0.3s;
+}
+
+.cart-icon:hover svg {
+  fill: var(--primary-color);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  padding: 0.25em 0.5em;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+}
+
+.theme-switcher button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: 500;
+}
+
+.theme-switcher button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.theme-switcher button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0.75rem 0;
+  }
+
+  .container {
+    gap: 1rem;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+
+  .navigation {
+    display: none;
+    width: 100%;
+    z-index: 40;
+  }
+
+  /* Show navigation when .open is present */
+  .navigation.open {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: var(--header-background-light);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    z-index: 40;
+    padding: 1rem 0;
+  }
+
+  /* make the mobile toggle button sit above other elements */
+  .mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 60;
+    position: relative;
+  }
+
+  :host-context(.dark-theme) .navigation.open {
+    background-color: var(--header-background-dark);
+  }
+
+  .navigation.open ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    padding: 0 1rem;
+  }
+  .navigation.open a { padding: .5rem 0; width:100%; }
+
+  .mobile-toggle { display: inline-flex; }
+
+  .header-actions {
+    gap: 1rem;
+  }
+
+  .theme-switcher button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+  }
+
+  /* show icon only on mobile */
+  .theme-switcher .theme-text { display: none; }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  .header {
+    padding: 0.875rem 0;
+  }
+
+  .logo a {
+    font-size: 1.3rem;
+  }
+
+  .navigation ul {
+    gap: 0.75rem;
+  }
+
+  .navigation a {
+    font-size: 0.875rem;
+  }
+
+  .header-actions {
+    gap: 1.25rem;
+  }
+
+  .theme-switcher button {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+  .container {
+    gap: 2rem;
+  }
+
+  .navigation ul {
+    gap: 1.25rem;
+  }
+
+  .header-actions {
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .header {
+    padding: 1.25rem 0;
+  }
+}
+

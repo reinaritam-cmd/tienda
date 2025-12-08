@@ -1,0 +1,21 @@
+<div class="shop-container">
+  <div class="container">
+    <div class="shop-header">
+      <h1>Tienda</h1>
+    </div>
+    <div class="product-grid">
+    @for (product of products(); track product.id) {
+        <div class="product-card">
+            <a [routerLink]="['/product', product.id]">
+                <img [src]="product.image" [alt]="product.name" onerror="this.src='https://placehold.co/250x250?text=Image+Not+Found'">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <p class="price">{{ product.price | currency:'Bs ' }}</p>
+            </a>
+            <button (click)="addToCart(product)">Añadir al carrito</button>
+        </div>
+  }
+</div>
+  </div>
+</div>
+
