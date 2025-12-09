@@ -16,6 +16,7 @@
             "outputPath": "dist/shopping-center",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/tienda/",
             "polyfills": [
               "zone.js"
             ],
